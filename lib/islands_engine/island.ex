@@ -28,6 +28,8 @@ defmodule IslandsEngine.Island do
     MapSet.equal?(coords, hit_coords)
   end
 
+  def types(), do: ~w[atoll dot l_shape s_shape square]a
+
   defp add_coordinates(offsets, upper_left) do
     offsets
     |> Enum.reduce_while(MapSet.new(), &add_coordinate(&2, upper_left, &1))
